@@ -10,15 +10,13 @@ public class White : MonoBehaviour
 
     public void Shoot()
     {
-        if (Input.GetKeyDown(Code.Mouse0))
+        Vector3 pos = cannon.position;
+        Quaternion rot = new Quaternion(0, 0, 0, 0);
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            Bullet.SetActive(true);
+            Object.Instantiate(Bullet,pos,rot);
+            Aud.PlayOneShot(Auc);
         }
-    void Update()
-        {
-            Shoot();
-        }
-
     }
     #endregion
 
@@ -36,6 +34,7 @@ public class White : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
+        Shoot();
     }
 
     /// <summary>
