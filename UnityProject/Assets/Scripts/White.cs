@@ -3,7 +3,23 @@
 public class White : MonoBehaviour
 {
     #region 練習區域 - 在此區域內練習
-    
+    public GameObject Bullet;
+    public Transform cannon;
+    public AudioSource Aud;
+    public AudioClip Auc;
+
+    public void Shoot()
+    {
+        if (Input.GetKeyDown(Code.Mouse0))
+        {
+            Bullet.SetActive(true);
+        }
+    void Update()
+        {
+            Shoot();
+        }
+
+    }
     #endregion
 
     #region KID 區域 - 不要偷看 @3@
